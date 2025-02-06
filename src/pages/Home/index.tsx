@@ -1,5 +1,10 @@
+import Aside from "../../components/Aside"
 export default function Home(){
     return( 
-        <div>welcom</div>
+        <div>
+            welcome
+            <aside/>
+
+        </div>
     )
 }

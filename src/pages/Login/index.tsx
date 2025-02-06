@@ -27,7 +27,7 @@ export default function Login() {
 
   return (
     <div className="flex justify-center items-center h-screen w-screen ">
-      <div className=" w-[30%] h-[70%] border border-gray-300 rounded-2xl flex flex-col items-center justify-center">
+      <div className=" w-[50%] h-[70%] md:border md:border-gray-300 rounded-2xl flex flex-col items-center justify-center">
         <img src={logo} className="w-11  p-2" alt="" />
         <h1 className="font-bold">Login To User Panel</h1>
         <br />
