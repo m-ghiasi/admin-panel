@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router";
-import logo from "../../assets/logo1.jpg";
+import { SiFitbit } from "react-icons/si";
 import TextField from "../../components/TextField";
 import Button from "../../components/Button";
 import { useState } from "react";
@@ -28,8 +28,8 @@ export default function Login() {
   return (
     <div className="flex justify-center items-center h-screen w-screen ">
       <div className=" w-[50%] h-[70%] md:border md:border-gray-300 rounded-2xl flex flex-col items-center justify-center">
-        <img src={logo} className="w-11  p-2" alt="" />
-        <h1 className="font-bold">Login To User Panel</h1>
+        <SiFitbit size={50} color="purple" />
+        <h1 className="font-bold mt-3">Login To User Panel</h1>
         <br />
         <TextField label="User Name" id="name" className="placeholder:Username" type="text" onChange={(e)=> setUsername(e.target.value)}/>
         <TextField label="Password" id="name" className="placeholder:Username" type="password" onChange={(e)=>  setPassword(e.target.value)}/>
