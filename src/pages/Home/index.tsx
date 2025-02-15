@@ -3,16 +3,16 @@ import Aside from "../../components/Aside";
 
 export default function Home(){
     return( 
-        <div className="w-full h-full flex flex-row  ">
+        <div className="flex h-screen  flex-row  ">
 
             
            
             <Aside />
-            <div className="flex">
+            <main className="flex flex-1 p-5  bg-gray-100">
                 {/*dynamic contents  */}
             <Outlet/>
 
-            </div>
+            </main>
            
         
 

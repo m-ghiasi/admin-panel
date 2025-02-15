@@ -4,6 +4,7 @@ import "./App.css";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
+import Users from "./pages/Users";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route index element={<div>hi home index</div>}></Route>
 
         <Route path="services" element={<Services />}></Route>
+        <Route path="users" element={<Users />}></Route>
       </Route>
     </Routes>
   );
