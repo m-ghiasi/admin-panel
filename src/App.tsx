@@ -5,6 +5,8 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Users from "./pages/Users";
+import NewUser from "./pages/NewUser";
+import MyUser from "./pages/MyUser";
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
 
         <Route path="services" element={<Services />}></Route>
         <Route path="users" element={<Users />}></Route>
+
+        <Route path="newuser" element={<NewUser />}></Route>
+        <Route path="myuser" element={<MyUser />}></Route>
       </Route>
     </Routes>
   );

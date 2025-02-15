@@ -1,7 +1,8 @@
 type PropsType = {
-  id: string;
+  id?: string;
   label: string;
   className?: string;
+  value?:string
   onChange: (event:React.ChangeEvent<HTMLInputElement>) => void;
   type: string;
 };
@@ -16,6 +17,7 @@ export default function TextField(props: PropsType) {
         name={props.id}
         id={props.id}
         onChange={props.onChange}
+        value={props.value}
       />
     </div>
   );

@@ -8,6 +8,7 @@ import { RiBillLine } from "react-icons/ri";
 import { SiFitbit } from "react-icons/si";
 import { MdProductionQuantityLimits } from "react-icons/md";
 import { FiUsers } from "react-icons/fi";
+import { IoPersonAddOutline } from "react-icons/io5";
 
 export default function Aside() {
   return (
@@ -31,6 +32,16 @@ export default function Aside() {
           />
           <span className="overflow-hidden w-0 group-hover:w-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300  text-white ">
             Dashboard
+          </span>
+        </NavLink>
+        <NavLink className="flex gap-3 items-center" to="/home/NewUser">
+          <IoPersonAddOutline 
+            className="min-w-[30px] min-h-[30px]"
+            size={30}
+            color="white"
+          />
+          <span className=" overflow-hidden w-0 group-hover:w-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300  text-white ">
+            AddNewUser
           </span>
         </NavLink>
         <NavLink className="flex gap-3 items-center" to="/home/Users">
@@ -74,16 +85,7 @@ export default function Aside() {
             Setting
           </span>
         </NavLink>
-        <NavLink className="flex gap-3 items-center" to="/home/Services">
-          <RiBillLine
-            className="min-w-[30px] min-h-[30px]"
-            size={30}
-            color="white"
-          />
-          <span className=" overflow-hidden w-0 group-hover:w-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300  text-white ">
-            Plans
-          </span>
-        </NavLink>
+        
       </div>
     </div>
   );
