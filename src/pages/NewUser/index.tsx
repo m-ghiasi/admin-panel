@@ -2,8 +2,8 @@ import { useState } from "react";
 import Button from "../../components/Button";
 import TextField from "../../components/TextField";
 import { TailSpin } from "react-loader-spinner";
-import { useNavigate } from "react-router";
-import MyUser from "../MyUser";
+import {  Outlet, useNavigate } from "react-router";
+
 
 
 
@@ -36,10 +36,12 @@ export default function NewUser() {
       const data = await response.json();
 
       console.log("user Created ", data);
+      navigate("/Home/NewUser/myuser");
+
 
       setFirstname("");
       setNewjob("");
-      navigate("myuser")
+      
       
 
       
@@ -57,7 +59,8 @@ export default function NewUser() {
   }
 
   return (
-    <form onSubmit={handelSubmit} className="m-auto">
+  <div className="m-auto">
+      <form onSubmit={handelSubmit} >
       <TextField
         label="First Name"
         type="text"
@@ -80,6 +83,13 @@ export default function NewUser() {
           "Add New User"
         )}
       </Button>
+      
+      
     </form>
+    <div>
+      <Outlet/>
+    </div>
+  </div>
+    
   );
 }

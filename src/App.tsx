@@ -21,8 +21,11 @@ function App() {
         <Route path="services" element={<Services />}></Route>
         <Route path="users" element={<Users />}></Route>
 
-        <Route path="newuser" element={<NewUser />}></Route>
-        <Route path="myuser" element={<MyUser />}></Route>
+        <Route path="newuser" >
+          <Route index element={<NewUser />}></Route>
+          <Route path="myuser" element={<MyUser />}></Route>
+        </Route>
+        {/* <Route path="myuser" element={<MyUser />}></Route> */}
       </Route>
     </Routes>
   );
