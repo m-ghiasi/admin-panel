@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "concurrently \"npm run server\" \"react-scripts start\"",
-    "server": "json-server --watch db.json --port 5001"
+    "server": "json-server --watch db.json --port 5000"
   
   },
   "dependencies": {
