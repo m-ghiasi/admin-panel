@@ -3,6 +3,7 @@ import Button from "../../components/Button";
 import TextField from "../../components/TextField";
 import { TailSpin } from "react-loader-spinner";
 import {  Outlet, useNavigate } from "react-router";
+import Select from "../../components/Select";
 
 
 
@@ -13,11 +14,15 @@ export default function NewUser() {
 
   const [Firstname, setFirstname] = useState("");
   const [newjob, setNewjob] = useState("");
+  const [availability, setAvailability] = useState("Available");
   const handleName = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFirstname(e.target.value);
   };
   const handleJob = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNewjob(e.target.value);
+  };
+  const handleavailability = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setAvailability(e.target.value);
   };
 
   const CreateUser = async () => {
@@ -31,6 +36,7 @@ export default function NewUser() {
         body: JSON.stringify({
           name: Firstname,
           job: newjob,
+          status:availability,
         }),
       });
       const data = await response.json();
@@ -41,6 +47,7 @@ export default function NewUser() {
 
       setFirstname("");
       setNewjob("");
+      setAvailability("")
       
       
 
@@ -59,7 +66,7 @@ export default function NewUser() {
   }
 
   return (
-  <div className="m-auto">
+  <div  className="m-auto">
       <form onSubmit={handelSubmit} >
       <TextField
         label="First Name"
@@ -69,6 +76,8 @@ export default function NewUser() {
       />
       <br />
       <TextField label="Job" type="text" onChange={handleJob} value={newjob} />
+      <br />
+      <Select onChange={handleavailability}/>
       <br />
       <Button
         
