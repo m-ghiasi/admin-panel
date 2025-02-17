@@ -1,5 +1,5 @@
 type BuType = {
-  label?: string;
+  label?: any;
   className?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   children?: React.ReactNode; 
