@@ -1,18 +1,6 @@
 {
   "users": [
     {
-      "id": "d3e4",
-      "name": "avin",
-      "job": "ghiasi",
-      "status": "UnAvailable"
-    },
-    {
-      "id": "0c48",
-      "name": "hossein",
-      "job": "moghtafari",
-      "status": ""
-    },
-    {
       "id": "71af",
       "name": "Maah",
       "job": " yasi",
@@ -23,12 +11,6 @@
       "name": "rayan",
       "job": "Ceo",
       "status": "UnAvailable"
-    },
-    {
-      "id": "0a4d",
-      "name": "eeededadc",
-      "job": "dsd",
-      "status": "Available"
     }
   ]
 }

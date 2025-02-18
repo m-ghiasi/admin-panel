@@ -22,8 +22,21 @@ export default function GetMyUsers() {
       console.error("getdata failed", error);
     }
   };
-  const handleDelete=(e:React.MouseEvent<HTMLButtonElement>)=>{
-    console.log(e.target)
+  const handleDelete=async(id:number)=>{
+    try {
+      const res= await fetch(`http://localhost:5000/users/${id}`, {
+        method:"DELETE"
+      });
+      if(!res.ok){
+        throw new Error("Failed to delete user")
+      }
+      setUsers((prevUsers) => prevUsers.filter((user)=> user.id !== id));
+
+
+
+    } catch(error){
+      console.error("Delete failled ", error)
+    }
 
   }
 
@@ -53,7 +66,7 @@ export default function GetMyUsers() {
               <td>{user.name}</td>
               <td>{user.job}</td>
               <td>{user.status === "Available" ? <FcOk /> : <MdDoNotDisturbOn color="red"/>}</td>
-              <td><Button onClick={handleDelete} label={<IoTrashBin color="purple" />}/></td>
+              <td><Button onClick={()=> handleDelete(user.id)} label={<IoTrashBin color="purple" />}/></td>
             </tr>
           ))}
         </tbody>
