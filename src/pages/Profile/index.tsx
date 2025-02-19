@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "../../components/Button";
-import Step1 from "./Forms/step1";
+import Step1 from "./Forms/Step1";
 import Step2 from "./Forms/Step2";
 import Step3 from "./Forms/Step3";
 import Step4 from "./Forms/Step4";
@@ -19,14 +19,14 @@ export default function Profile() {
 
   return (
     <div
-      className="bg-purple-700 w-full h-full flex items-center justify-center
+      className=" w-full h-full flex items-center justify-center
      "
     >
-      <form className=" bg-white w-96 p-4 rounded-2xl">
+      <form className=" bg-gray-200 w-96 p-4 rounded-2xl">
         <header>
           <h1 className="font-bold text-2xl">Information</h1>
         </header>
-        <hr className="text-gray-200 my-3" />
+        <hr className="text-gray-400 my-3" />
         {/* step */}
         <div className="flex justify-evenly gap-2">
           {stepLength.map((st) => (
