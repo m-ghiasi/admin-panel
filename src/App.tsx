@@ -7,6 +7,7 @@ import Services from "./pages/Services";
 import Users from "./pages/Users";
 import NewUser from "./pages/NewUser";
 import MyUser from "./pages/MyUser";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
           <Route index element={<NewUser />}></Route>
           <Route path="myuser" element={<MyUser />}></Route>
         </Route>
-        {/* <Route path="myuser" element={<MyUser />}></Route> */}
+        <Route path="profile" element={<Profile />}></Route>
       </Route>
     </Routes>
   );

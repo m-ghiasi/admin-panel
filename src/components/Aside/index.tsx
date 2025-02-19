@@ -35,7 +35,7 @@ export default function Aside() {
           </span>
         </NavLink>
         <NavLink className="flex gap-3 items-center" to="/Home/NewUser">
-          <IoPersonAddOutline 
+          <IoPersonAddOutline
             className="min-w-[30px] min-h-[30px]"
             size={30}
             color="white"
@@ -64,7 +64,7 @@ export default function Aside() {
             Services
           </span>
         </NavLink>
-        <NavLink className="flex gap-3 items-center" to="/Home/Services">
+        <NavLink className="flex gap-3 items-center" to="/Home/Profile">
           <MdOutlineManageAccounts
             className="min-w-[30px] min-h-[30px]"
             size={30}
@@ -85,7 +85,6 @@ export default function Aside() {
             Setting
           </span>
         </NavLink>
-        
       </div>
     </div>
   );
