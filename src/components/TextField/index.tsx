@@ -8,7 +8,7 @@ type PropsType = {
 };
 export default function TextField(props: PropsType) {
   return (
-    <div className="flex f gap-3 p-2">
+    <div className="flex flex-col gap-3 p-2">
       <label htmlFor={props.id}>{props.label}</label>
 
       <input
