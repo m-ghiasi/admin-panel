@@ -67,7 +67,7 @@ export default function Users() {
             </div>
 
             <div className="p-3 flex flex-col gap-2 items-center text-gray-500">
-              <p>you han no user!</p>
+              <p>you have no user!</p>
               <p>Here you can create new users. </p>
             </div>
             <Button

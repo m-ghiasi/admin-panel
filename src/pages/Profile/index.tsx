@@ -4,17 +4,21 @@ import Step1 from "./Forms/Step1";
 import Step2 from "./Forms/Step2";
 import Step3 from "./Forms/Step3";
 import Step4 from "./Forms/Step4";
+import { useNavigate } from "react-router";
 
 export default function Profile() {
   const [step, setStep] = useState<number>(1);
+  const navigate = useNavigate()
 
   const stepLength = [1, 2, 3, 4];
   const handelStep = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (step < 4) {
       setStep(step + 1);
+    }if(step===4 ){
+      navigate("/dashboard")
     }
-    console.log(step);
+    
   };
 
   return (
