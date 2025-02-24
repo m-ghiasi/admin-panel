@@ -2,33 +2,43 @@ import { Route, Routes } from "react-router";
 import "./App.css";
 
 import Login from "./pages/Login";
-import Home from "./pages/Home";
+
 import Services from "./pages/Services";
 import Users from "./pages/Users";
 import NewUser from "./pages/NewUser";
 import MyUser from "./pages/MyUser";
 import Profile from "./pages/Profile";
+import Dashboard from "./pages/Dashboard";
+import Aside from "./components/Aside";
 
 function App() {
   return (
-    <Routes>
-      {/* login page */}
-      <Route path="/" element={<Login />} />
+    
+      <div className="flex h-screen flex-row">
+        <Aside />
+        <Routes>
+          {/* login page */}
+          <Route path="/" element={<Login />} />
 
-      {/* layout-> Home incloude aside */}
-      <Route path="/Home" element={<Home />}>
-        <Route index element={<div>hi home index</div>}></Route>
+          {/* layout-> dashboard incloude aside */}
+          <Route path="/Dashboard" element={<Dashboard />}>
+          </Route>
+          {/* <Route path="dashboard">
+          <Route index element={<Dashboard />}></Route>
+        </Route> */}
 
-        <Route path="services" element={<Services />}></Route>
-        <Route path="users" element={<Users />}></Route>
+          <Route path="services" element={<Services />}></Route>
+          <Route path="users" element={<Users />}></Route>
 
-        <Route path="newuser" >
-          <Route index element={<NewUser />}></Route>
-          <Route path="myuser" element={<MyUser />}></Route>
-        </Route>
-        <Route path="profile" element={<Profile />}></Route>
-      </Route>
-    </Routes>
+          <Route path="newuser">
+            <Route index element={<NewUser />}></Route>
+            <Route path="myuser" element={<MyUser />}></Route>
+          </Route>
+          <Route path="profile" element={<Profile />}></Route>
+          
+        </Routes>
+      </div>
+    
   );
 }
 

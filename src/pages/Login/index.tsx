@@ -16,7 +16,7 @@ export default function Login() {
     const hadelLogin= ()=> {
    
         if(username===correctUsername && password===corretPassword) {
-            navigate("/home")
+            navigate("/dashboard")
         } else {
             console.log("error----toast")
         }

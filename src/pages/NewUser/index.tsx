@@ -42,7 +42,7 @@ export default function NewUser() {
       const data = await response.json();
 
       console.log("user Created ", data);
-      navigate("/Home/NewUser/myuser");
+      navigate("/NewUser/myuser");
 
 
       setFirstname("");

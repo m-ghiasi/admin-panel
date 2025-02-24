@@ -14,7 +14,7 @@ export default function Aside() {
   return (
     <div className="flex  h-screen relative ">
       <div className="group w-[70px] absolute z-10 h-full bg-purple-600   hover:w-[250px] transition-all duration-300  flex flex-col gap-7 pl-3 pt-10">
-        <NavLink className="pb-10 flex gap-3 items-center " to="Home">
+        <NavLink className="pb-10 flex gap-3 items-center " to="dashboard">
           <SiFitbit
             className="min-w-[40px] min-h-[40px]"
             color="white"
@@ -24,7 +24,7 @@ export default function Aside() {
             Fitilo
           </span>
         </NavLink>
-        <NavLink className="flex gap-3 items-center" to="/Home/Services">
+        <NavLink className="flex gap-3 items-center" to="/dashboard">
           <RxDashboard
             className="min-w-[30px] min-h-[30px]"
             size={30}
@@ -34,7 +34,7 @@ export default function Aside() {
             Dashboard
           </span>
         </NavLink>
-        <NavLink className="flex gap-3 items-center" to="/Home/Profile">
+        <NavLink className="flex gap-3 items-center" to="/Profile">
           <MdOutlineManageAccounts
             className="min-w-[30px] min-h-[30px]"
             size={30}
@@ -44,7 +44,7 @@ export default function Aside() {
             Profile
           </span>
         </NavLink>
-        <NavLink className="flex gap-3 items-center" to="/Home/NewUser">
+        <NavLink className="flex gap-3 items-center" to="/NewUser">
           <IoPersonAddOutline
             className="min-w-[30px] min-h-[30px]"
             size={30}
@@ -54,7 +54,7 @@ export default function Aside() {
             AddNewUser
           </span>
         </NavLink>
-        <NavLink className="flex gap-3 items-center" to="/Home/Users">
+        <NavLink className="flex gap-3 items-center" to="/Users">
           <FiUsers
             className="min-w-[30px] min-h-[30px]"
             size={30}
@@ -64,7 +64,7 @@ export default function Aside() {
             Users
           </span>
         </NavLink>
-        <NavLink className="flex gap-3 items-center" to="/Home/Services">
+        <NavLink className="flex gap-3 items-center" to="/Services">
           <MdProductionQuantityLimits
             className="min-w-[30px] min-h-[30px]"
             size={30}
@@ -76,7 +76,7 @@ export default function Aside() {
         </NavLink>
       
 
-        <NavLink className="flex gap-3 items-center" to="/Home/Services">
+        <NavLink className="flex gap-3 items-center" to="/Services">
           <IoSettingsOutline
             className="min-w-[30px] min-h-[30px]"
             size={30}

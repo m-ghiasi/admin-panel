@@ -21,10 +21,10 @@ export default function Users() {
   };
   const [hover, setHover] = useState<boolean>(false);
   const handleClick = () => {
-    navigate("/Home/NewUser");
+    navigate("/NewUser");
   };
   return (
-    <div className="ml-[5%] w-full h-screen flex flex-col ">
+    <div className="ml-[5%] w-full h-screen flex flex-col p-4">
       <div className="flex gap-4 ">
         <Button
           className={`text-purple-700 font-bold h-20 p-4 rounded-t-2xl mb-3 ${
