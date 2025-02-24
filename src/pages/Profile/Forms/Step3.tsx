@@ -14,7 +14,7 @@ export default function Step3(){
     return(
        <div>
         <StepWraper>
-            <TextField  type="text" label="Profession" id="profession" onChange={handleprofession}/>
+            <TextField  type="text" label="Education" id="profession" onChange={handleprofession}/>
             <TextField  type="number" label="Age" id="age" onChange={handleAge}/>
         </StepWraper>
        </div>

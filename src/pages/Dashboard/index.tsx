@@ -1,12 +1,17 @@
 // import Aside from "../../components/Aside";
 
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import Step4 from "../Profile/Forms/Step4";
 import { IoPersonAddOutline } from "react-icons/io5";
 import Button from "../../components/Button";
 import { MdProductionQuantityLimits } from "react-icons/md";
 
 export default function Dashboard() {
+const navigate= useNavigate()
+const handelProfile =()=>{
+  navigate("/Profile")
+}
+
   return (
     <div className=" h-screen w-[100%] flex flex-col  p-10  bg-purple-200 justify-between items-center ">
       
@@ -24,6 +29,7 @@ export default function Dashboard() {
           <Step4 />
 
           <Button
+          onClick={handelProfile}
             label="Go TO PROFILE"
             className="w-40 px-6 py-2 bg-purple-600 text-white rounded-2xl font-medium"
           />
