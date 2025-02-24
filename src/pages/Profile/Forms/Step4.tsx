@@ -14,8 +14,8 @@ export default function Step4(){
            <p> Last Name: {step1.lastName}</p>
            <p> Job: {step2.job}</p>
            <p> Experience: {step2.experience}</p>
-           <p> Experience: {step3.profession}</p>
-           <p> Experience: {step3.age}</p>
+           <p> Year Of Experience: {step3.profession}</p>
+           <p> Age: {step3.age}</p>
 
         </StepWraper>
        </div>

@@ -34,6 +34,16 @@ export default function Aside() {
             Dashboard
           </span>
         </NavLink>
+        <NavLink className="flex gap-3 items-center" to="/Home/Profile">
+          <MdOutlineManageAccounts
+            className="min-w-[30px] min-h-[30px]"
+            size={30}
+            color="white"
+          />
+          <span className="overflow-hidden w-0 group-hover:w-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300  text-white ">
+            Profile
+          </span>
+        </NavLink>
         <NavLink className="flex gap-3 items-center" to="/Home/NewUser">
           <IoPersonAddOutline
             className="min-w-[30px] min-h-[30px]"
@@ -64,16 +74,7 @@ export default function Aside() {
             Services
           </span>
         </NavLink>
-        <NavLink className="flex gap-3 items-center" to="/Home/Profile">
-          <MdOutlineManageAccounts
-            className="min-w-[30px] min-h-[30px]"
-            size={30}
-            color="white"
-          />
-          <span className="overflow-hidden w-0 group-hover:w-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300  text-white ">
-            Profile
-          </span>
-        </NavLink>
+      
 
         <NavLink className="flex gap-3 items-center" to="/Home/Services">
           <IoSettingsOutline
