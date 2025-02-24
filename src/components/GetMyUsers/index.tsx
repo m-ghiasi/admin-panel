@@ -3,6 +3,7 @@ import { FcOk } from "react-icons/fc";
 import { MdDoNotDisturbOn } from "react-icons/md";
 import Button from "../Button";
 import { IoTrashBin } from "react-icons/io5";
+import { CiEdit } from "react-icons/ci";
 type User = {
   id: number;
   name: string;
@@ -53,6 +54,23 @@ export default function GetMyUsers() {
     }
   }
 
+  const handleEdit=async(id:number)=> {
+    // try {
+      // const res= await fetch(`http://localhost:5000/users/${id}` , {
+        // method: ""
+      // }) 
+    //   if(!res.ok) {
+    //     throw new Error("Failed delet")
+    //   }
+    //   setUsers((prevUsers)=>prevUsers.filter((user)=> user.id !== id))
+    // } catch (error) {
+    //   console.error("failed", error)
+
+      
+    // }
+    console.log(id)
+  }
+
 
   useEffect(() => {
     getData();
@@ -62,18 +80,19 @@ export default function GetMyUsers() {
     <div>
       <table>
         <thead>
-          <tr className="grid grid-cols-5 gap-4  p-4 rounded-2xl bg-gray-300">
+          <tr className="grid grid-cols-6 gap-4  p-4 rounded-2xl bg-gray-300">
             <td>Number</td>
             <td>Name</td>
             <td>Job</td>
             <td>status</td>
-            <td>stability</td>
+            <td>Delete</td>
+            <td>Edit</td>
           </tr>
         </thead>
         <tbody>
           {users.map((user, index) => (
             <tr
-              className="grid grid-cols-5 gap-4  p-4 rounded-2xl border border-gray-300"
+              className="grid grid-cols-6 gap-4  p-4 rounded-2xl border border-gray-300"
               key={user.id}
             >
               <td>{index + 1}</td>
@@ -90,6 +109,12 @@ export default function GetMyUsers() {
                 <Button
                   onClick={()=>handleDelete(user.id)}
                   label={<IoTrashBin color="purple" />}
+                />
+              </td>
+              <td>
+                <Button
+                  onClick={()=>handleEdit(user.id)}
+                  label={<CiEdit color="purple" />}
                 />
               </td>
             </tr>
