@@ -33,18 +33,21 @@ const TemplateCard: FC<PropTypes> = (props) => {
         <br />
       </div>
       <div className="flex flex-col gap-2 p-4">
-        <p>UserName: {username}</p>
-        <p>Name : {name}</p>
+        <p><span className="font-bold">UserName:</span> {username}</p>
+        <p><span className="font-bold">Name:</span> {name}</p>
         <p>
-          City : {address.city}-{address.zipcode}
+          <span className="font-bold">City :</span> {address.city}-{address.zipcode}
         </p>
-        <p>Reservation Link : {website}</p>
-        <p>Email: {email}</p>
+        <p><span className="font-bold">Reservation Link :</span> {website}</p>
+        <p><span className="font-bold">Email:</span> {email}</p>
       </div>
+      <div className="flex justify-between p-2 items-center">
       <Button
         label="Select"
         className="text-purple-700 bg-white px-5 py-3  border-purple-700 border-3 m-2 rounded-xl  font-bold"
       />
+      <span className="font-bold text-purple-600 text-2xl">320$</span>
+      </div>
     </div>
   );
 };
