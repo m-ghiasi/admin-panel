@@ -36,7 +36,7 @@ const GetDataFetch: FC<PropTypes> = ({url, handleFetchedData}) => {
   return (<div>
     
         
-   fetching data...
+ 
 
 
 
