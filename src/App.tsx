@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router";
+import { Route, Routes, useLocation } from "react-router";
 import "./App.css";
 
 import Login from "./pages/Login";
@@ -12,10 +12,13 @@ import Dashboard from "./pages/Dashboard";
 import Aside from "./components/Aside";
 
 function App() {
+
+  const location = useLocation()
+  const hideAside:boolean = location.pathname ==="/";
   return (
     
       <div className="flex h-screen flex-row">
-        <Aside />
+        {!hideAside && <Aside />}
         <Routes>
           {/* login page */}
           <Route path="/" element={<Login />} />

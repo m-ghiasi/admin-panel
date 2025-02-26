@@ -19,7 +19,7 @@ export default function Services() {
 
   const filterServices = services.filter((service: any) => {
     if (selectTab === "master") return service.id < 5;
-    if (selectTab === "bachelor") return service.id >= 8;
+    if (selectTab === "bachelor") return service.id >= 6;
     return true;
   });
 
@@ -32,17 +32,29 @@ export default function Services() {
       <div className="flex gap-1 px-20">
         <Button
           label="All State"
-          className={`font-bold rounded-t-2xl px-10 py-3 ${selectTab==="all"? "bg-white text-purple-600": "bg-purple-600 text-white" }` }
+          className={`font-bold rounded-t-2xl px-10 py-3 ${
+            selectTab === "all"
+              ? "bg-white text-purple-600"
+              : "bg-purple-600 text-white"
+          }`}
           onClick={handelServices}
         />
         <Button
           label="Master"
-          className={`font-bold rounded-t-2xl px-10 py-3 ${selectTab==="master"? "bg-white text-purple-600": "bg-purple-600 text-white" }` }
+          className={`font-bold rounded-t-2xl px-10 py-3 ${
+            selectTab === "master"
+              ? "bg-white text-purple-600"
+              : "bg-purple-600 text-white"
+          }`}
           onClick={handelMaster}
         />
         <Button
           label="Bachelor"
-          className={`font-bold rounded-t-2xl px-10 py-3 ${selectTab==="bachelor"? "bg-white text-purple-600": "bg-purple-600 text-white" }` }
+          className={`font-bold rounded-t-2xl px-10 py-3 ${
+            selectTab === "bachelor"
+              ? "bg-white text-purple-600"
+              : "bg-purple-600 text-white"
+          }`}
           onClick={handelBachelor}
         />
       </div>
