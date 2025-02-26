@@ -40,7 +40,7 @@ const handelProfile =()=>{
         <hr className="w-full m-2 text-gray-400" />
 
         <MdProductionQuantityLimits className="w-60 h-60 text-gray-300" />
-        <p>You haven't purchased yet.</p>
+        <p>You haven't purchased yet...</p>
         <Button
           label="Go TO SERVICES"
           className="w-60 px-6 py-2 bg-purple-600 text-white rounded-2xl font-medium"
