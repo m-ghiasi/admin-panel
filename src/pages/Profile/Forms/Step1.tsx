@@ -25,8 +25,8 @@ export default function Step1(){
  return(
     <div>
         <StepWraper>
-            <TextField label="First Name :" type="text" id="firstName" onChange={handelName} />
-            <TextField label="Last Name :" type="text" id="lastName" onChange={handelNLastame} />
+            <TextField value={step1.firstName} label="First Name :" type="text" id="firstName" onChange={handelName} />
+            <TextField value={step1.lastName} label="Last Name :" type="text" id="lastName" onChange={handelNLastame} />
 
         </StepWraper>
         

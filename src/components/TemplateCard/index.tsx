@@ -23,7 +23,7 @@ const TemplateCard: FC<PropTypes> = (props) => {
   const { name, id, company, address, username, website, email } = props;
 
   return (
-    <div className=" rounded-2xl shadow   ">
+    <div className=" rounded-2xl shadow    ">
       <div className="bg-purple-200 rounded-b-[50%] rounded-t-2xl p-5 flex flex-col items-center justify-center gap-2">
         <h1 className="font-bold text-xl">Plan- {id}</h1>
 

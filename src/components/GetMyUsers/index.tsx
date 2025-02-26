@@ -4,6 +4,7 @@ import { MdDoNotDisturbOn } from "react-icons/md";
 import Button from "../Button";
 import { IoTrashBin } from "react-icons/io5";
 import { CiEdit } from "react-icons/ci";
+import { TailSpin } from "react-loader-spinner";
 type User = {
   id: number;
   name: string;
@@ -12,8 +13,10 @@ type User = {
 };
 export default function GetMyUsers() {
   const [users, setUsers] = useState<User[]>([]);
+  const [loading, setLoading]= useState(false)
   const getData = async () => {
     try {
+      setLoading(true)
       const res = await fetch("http://localhost:5000/users");
       const data: User[] = await res.json();
       console.log(data);
@@ -21,6 +24,8 @@ export default function GetMyUsers() {
       console.log(data);
     } catch (error) {
       console.error("getdata failed", error);
+    } finally{
+      setLoading(false)
     }
   };
   // const handleDelete = async (id: number) => {
@@ -78,49 +83,54 @@ export default function GetMyUsers() {
 
   return (
     <div>
+      {loading ? (<div className="flex justify-center mt-10">
+        <TailSpin width={50} height={50} color="purple" />
+      </div>) :(
+        
       <table>
-        <thead>
-          <tr className="grid grid-cols-6 gap-4  p-4 rounded-2xl bg-gray-300">
-            <td>Number</td>
-            <td>Name</td>
-            <td>Job</td>
-            <td>status</td>
-            <td>Delete</td>
-            <td>Edit</td>
+      <thead>
+        <tr className="grid grid-cols-6 gap-4  p-4 rounded-2xl bg-gray-300">
+          <td>Number</td>
+          <td>Name</td>
+          <td>Job</td>
+          <td>status</td>
+          <td>Delete</td>
+          <td>Edit</td>
+        </tr>
+      </thead>
+      <tbody>
+        {users.map((user, index) => (
+          <tr
+            className="grid grid-cols-6 gap-4  p-4 rounded-2xl border border-gray-300"
+            key={user.id}
+          >
+            <td>{index + 1}</td>
+            <td>{user.name}</td>
+            <td>{user.job}</td>
+            <td>
+              {user.status === "Available" ? (
+                <FcOk />
+              ) : (
+                <MdDoNotDisturbOn color="red" />
+              )}
+            </td>
+            <td>
+              <Button
+                onClick={()=>handleDelete(user.id)}
+                label={<IoTrashBin color="purple" />}
+              />
+            </td>
+            <td>
+              <Button
+                onClick={()=>handleEdit(user.id)}
+                label={<CiEdit color="purple" />}
+              />
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          {users.map((user, index) => (
-            <tr
-              className="grid grid-cols-6 gap-4  p-4 rounded-2xl border border-gray-300"
-              key={user.id}
-            >
-              <td>{index + 1}</td>
-              <td>{user.name}</td>
-              <td>{user.job}</td>
-              <td>
-                {user.status === "Available" ? (
-                  <FcOk />
-                ) : (
-                  <MdDoNotDisturbOn color="red" />
-                )}
-              </td>
-              <td>
-                <Button
-                  onClick={()=>handleDelete(user.id)}
-                  label={<IoTrashBin color="purple" />}
-                />
-              </td>
-              <td>
-                <Button
-                  onClick={()=>handleEdit(user.id)}
-                  label={<CiEdit color="purple" />}
-                />
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+        ))}
+      </tbody>
+    </table>
+      )}
     </div>
   );
 }

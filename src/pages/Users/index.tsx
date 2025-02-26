@@ -4,6 +4,7 @@ import { useState } from "react";
 import { PiMaskSadLight } from "react-icons/pi";
 import { PiMaskHappyLight } from "react-icons/pi";
 import { useNavigate } from "react-router";
+import { TailSpin } from "react-loader-spinner";
 
 import GetMyUsers from "../../components/GetMyUsers";
 
@@ -11,17 +12,24 @@ export default function Users() {
   const [selectedTab, setSelectedTab] = useState<string | JSX.Element | null>(
     null
   );
+  const [loading, setLoading]= useState(false)
   const navigate = useNavigate();
 
   const handleMyUser = () => {
+   
     setSelectedTab("MyUser");
+
   };
   const ReqresUsers = () => {
     setSelectedTab("reqres");
   };
   const [hover, setHover] = useState<boolean>(false);
   const handleClick = () => {
-    navigate("/NewUser");
+    setLoading(true)
+    setTimeout(() => {
+      navigate("/NewUser");
+    }, 1000);
+    setLoading(false)
   };
   return (
     <div className="ml-[5%] w-full h-screen flex flex-col p-4">
@@ -71,7 +79,7 @@ export default function Users() {
               <p>Here you can create new users. </p>
             </div>
             <Button
-              label="Create New User"
+              label= {loading ? <TailSpin width={20} height={20} color="yellow"/> : "Create New User"}
               className="bg-purple-600 text-white font-bold text-2xl px-6 py-4 rounded-2xl "
               onMouseEnter={() => setHover(true)}
               onMouseLeave={() => setHover(false)}

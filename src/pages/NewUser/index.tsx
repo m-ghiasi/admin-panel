@@ -18,7 +18,7 @@ export default function NewUser() {
   const handleName = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFirstname(e.target.value);
   };
-  const handleJob = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleLastName = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNewjob(e.target.value);
   };
   const handleavailability = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -67,15 +67,18 @@ export default function NewUser() {
 
   return (
   <div  className="m-auto">
-      <form onSubmit={handelSubmit} >
+      <form className="bg-gray-200 p-10 rounded-2xl" onSubmit={handelSubmit} >
+        <h1 className="flex  justify-center m-2 font-bold text-2xl">Create New User</h1>
       <TextField
+      
         label="First Name"
         type="text"
         value={Firstname}
         onChange={handleName}
+        plac="Ali"
       />
       <br />
-      <TextField label="Job" type="text" onChange={handleJob} value={newjob} />
+      <TextField label="Last Name" type="text" onChange={handleLastName} value={newjob} plac="olovi" />
       <br />
       <Select onChange={handleavailability}/>
       <br />
@@ -86,7 +89,7 @@ export default function NewUser() {
       >
         {loading ? (
           <div className="flex justify-center items-center">
-            <TailSpin width={20} height={20} color="gray" />
+            <TailSpin width={20} height={20} color="purple" />
           </div>
         ) : (
           "Add New User"
