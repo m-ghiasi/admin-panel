@@ -17,10 +17,10 @@ const GetDataFetch: FC<PropTypes> = ({url, handleFetchedData}) => {
     try {
       setLoading(true)
         const res = await fetch(fetchUrl);
-        const data = await res.json()
+        const newdata = await res.json()
 
-        console.log(data)
-        setData(data)
+        console.log(newdata)
+        setData(newdata)
         handleFetchedData(data)
         
         
