@@ -8,7 +8,7 @@ handleFetchedData:(data:any[]) => void
 
 const GetDataFetch: FC<PropTypes> = ({url, handleFetchedData}) => {
   
-  const [data, setData]= useState<any[]>([])
+ 
   const [loading , setLoading]= useState(false)
 
 
@@ -20,8 +20,8 @@ const GetDataFetch: FC<PropTypes> = ({url, handleFetchedData}) => {
         const newdata = await res.json()
 
         console.log(newdata)
-        setData(newdata)
-        handleFetchedData(data)
+        
+        handleFetchedData(newdata)
         
         
     } catch (error) {
