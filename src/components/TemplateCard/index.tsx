@@ -22,9 +22,9 @@ type Addresstype = {
 const TemplateCard: FC<PropTypes> = (props) => {
   const { name, id, company, address, username, website, email } = props;
 
-  const [selsctCard, setSelectCard]= useState("")
+  const [selsctCard, setSelectCard]= useState(false)
   const hadleSelect = ()=>{
-    setSelectCard("selected")
+    setSelectCard((prev)=> !prev)
 
   }
 
@@ -49,7 +49,7 @@ const TemplateCard: FC<PropTypes> = (props) => {
       </div>
       <div className="flex justify-between p-2 items-center">
       <Button
-        label="Select"
+        label={selsctCard? "Selected": "Select"}
         onClick={hadleSelect}
         className={`text-purple-700 px-5 py-3  border-purple-700 border-3 m-2 rounded-xl  font-bold ${selsctCard? "bg-purple-200 ": "bg-white"}`}
       />
