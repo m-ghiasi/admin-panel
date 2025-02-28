@@ -11,6 +11,9 @@ const navigate= useNavigate()
 const handelProfile =()=>{
   navigate("/Profile")
 }
+const handleService = ()=> {
+  navigate("/services")
+}
 
   return (
     <div className=" h-screen w-[100%] flex flex-col  p-10  bg-purple-200 justify-between items-center ">
@@ -44,6 +47,7 @@ const handelProfile =()=>{
         <Button
           label="Go TO SERVICES"
           className="w-60 px-6 py-2 bg-purple-600 text-white rounded-2xl font-medium"
+          onClick={handleService}
         />
       </div>
 

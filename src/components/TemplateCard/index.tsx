@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import Button from "../Button";
 
 type PropTypes = {
@@ -22,6 +22,12 @@ type Addresstype = {
 const TemplateCard: FC<PropTypes> = (props) => {
   const { name, id, company, address, username, website, email } = props;
 
+  const [selsctCard, setSelectCard]= useState("")
+  const hadleSelect = ()=>{
+    setSelectCard("selected")
+
+  }
+
   return (
     <div className=" rounded-2xl shadow    ">
       <div className="bg-purple-200 rounded-b-[50%] rounded-t-2xl p-5 flex flex-col items-center justify-center gap-2">
@@ -44,7 +50,8 @@ const TemplateCard: FC<PropTypes> = (props) => {
       <div className="flex justify-between p-2 items-center">
       <Button
         label="Select"
-        className="text-purple-700 bg-white px-5 py-3  border-purple-700 border-3 m-2 rounded-xl  font-bold"
+        onClick={hadleSelect}
+        className={`text-purple-700 px-5 py-3  border-purple-700 border-3 m-2 rounded-xl  font-bold ${selsctCard? "bg-purple-200 ": "bg-white"}`}
       />
       <span className="font-bold text-purple-600 text-2xl">320$</span>
       </div>
