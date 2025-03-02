@@ -17,7 +17,7 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 export default function Aside() {
   return (
     <div>
-      <div className="md:hidden bg-purple-600 h-[10%] w-[100vw] flex justify-between items-center px-4">
+      <div className="md:hidden bg-purple-600  w-[100vw] flex justify-between items-center px-4 py-5">
         <div className="flex gap-2 items-center">
           <Button
             className=""

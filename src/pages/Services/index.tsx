@@ -24,15 +24,15 @@ export default function Services() {
   });
 
   return (
-    <div className=" w-full overflow-auto px-10 mt-10 mb-10">
+    <div className="overflow-x-hidden w-full overflow-auto md:px-10 mt-10 mb-10 flex flex-col items-center">
       <GetDataFetch
         url="https://jsonplaceholder.typicode.com/users"
         handleFetchedData={setServices}
       />
-      <div className="flex gap-1 px-20">
+      <div className="flex gap-1 md:px-20 items-center justify-center md:justify-start mx-2">
         <Button
           label="All State"
-          className={`font-bold rounded-t-2xl px-10 py-3 ${
+          className={`font-bold rounded-t-2xl px-5 py-3 ${
             selectTab === "all"
               ? "bg-white text-purple-600"
               : "bg-purple-600 text-white"
@@ -41,7 +41,7 @@ export default function Services() {
         />
         <Button
           label="Master"
-          className={`font-bold rounded-t-2xl px-10 py-3 ${
+          className={`font-bold rounded-t-2xl px-5 py-3 ${
             selectTab === "master"
               ? "bg-white text-purple-600"
               : "bg-purple-600 text-white"
@@ -50,7 +50,7 @@ export default function Services() {
         />
         <Button
           label="Bachelor"
-          className={`font-bold rounded-t-2xl px-10 py-3 ${
+          className={`font-bold rounded-t-2xl px-5 py-3 ${
             selectTab === "bachelor"
               ? "bg-white text-purple-600"
               : "bg-purple-600 text-white"
@@ -59,7 +59,7 @@ export default function Services() {
         />
       </div>
 
-      <div className="flex flex-wrap gap-5 ml-20 p-5 shadow-xl shadow-b-xl pb-10 shadow-purple-300  rounded-2xl min-w-[85%] ">
+      <div className=" flex flex-wrap gap-5 md:ml-20 items-center justify-center md:p-5 shadow-xl shadow-b-xl pb-10 shadow-purple-300  rounded-2xl md:w-[85%] w-[80%] ">
         {filterServices.lenghth === 0 ? (
           <div>is loading...</div>
         ) : (
