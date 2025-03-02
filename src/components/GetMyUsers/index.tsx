@@ -82,17 +82,17 @@ export default function GetMyUsers() {
   }, []);
 
   return (
-    <div>
+    <div className="w-[100%]">
       {loading ? (<div className="flex justify-center mt-10">
         <TailSpin width={50} height={50} color="purple" />
       </div>) :(
         
-      <table>
-      <thead>
-        <tr className="grid grid-cols-6 gap-4  p-4 rounded-2xl bg-gray-300">
-          <td>Number</td>
+      <table className="w-[100%]">
+      <thead className="w-[100%]">
+        <tr className="md:grid md:grid-cols-6 flex justify-between gap-1  p-4 rounded-2xl bg-gray-300 w-[100%] font-bold">
+          <td className="">Nu</td>
           <td>Name</td>
-          <td>Job</td>
+          <td className="flex-2">Job</td>
           <td>status</td>
           <td>Delete</td>
           <td>Edit</td>
@@ -101,12 +101,12 @@ export default function GetMyUsers() {
       <tbody>
         {users.map((user, index) => (
           <tr
-            className="grid grid-cols-6 gap-4  p-4 rounded-2xl border border-gray-300"
+            className="md:grid md:grid-cols-6 gap-4 flex justify-between p-4 rounded-2xl border border-gray-300"
             key={user.id}
           >
             <td>{index + 1}</td>
-            <td>{user.name}</td>
-            <td>{user.job}</td>
+            <td >{user.name}</td>
+            <td className="flex-2">{user.job}</td>
             <td>
               {user.status === "Available" ? (
                 <FcOk />

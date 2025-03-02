@@ -24,7 +24,7 @@ export default function Services() {
   });
 
   return (
-    <div className="overflow-x-hidden w-full overflow-auto md:px-10 mt-10 mb-10 flex flex-col items-center">
+    <div className="overflow-x-hidden w-full overflow-auto md:px-10 mt-10 mb-10 flex flex-col md:items-start items-center">
       <GetDataFetch
         url="https://jsonplaceholder.typicode.com/users"
         handleFetchedData={setServices}
