@@ -14,10 +14,10 @@ export default function Aside() {
     const isMobile = window.matchMedia("(max-width:768px").matches;
 
     if (!isMobile) return;
-    const handleClickOutside = () => {
+    const handleAnyWhere = () => {
       setHamMenu(false);
     };
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", handleAnyWhere);
   }, []);
 
   const handelMobileMenu = (e: React.MouseEvent) => {
@@ -52,7 +52,7 @@ export default function Aside() {
       {/* mobile menu */}
      
         <div
-          className={` md:hidden fixed top-20 left-0 transition-all duration-300  w-[60%] h-screen bg-purple-600 ${
+          className={`z-2 md:hidden fixed top-20 left-0 transition-all duration-300  w-[60%] h-screen bg-purple-600 ${
             hamMenu ? "translate-x-0" : "-translate-x-full"
           } `}
         >
