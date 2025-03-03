@@ -28,13 +28,13 @@ const handleService = ()=> {
           </NavLink>
         </div>
 
-        <div className="md:w-[600px] flex flex-col gap-4 ">
-          <Step4 />
+        <div className="md:w-[40%] flex flex-col gap-4  ">
+          <Step4  />
 
           <Button
           onClick={handelProfile}
             label="Go TO PROFILE"
-            className="w-40 px-6 py-2 bg-purple-600 text-white rounded-2xl font-medium"
+            className="w-[70%] md:w-[60%] px-6 py-2 bg-purple-600 text-white rounded-2xl font-medium mx-auto"
           />
         </div>
       </div>
