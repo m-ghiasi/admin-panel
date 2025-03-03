@@ -26,7 +26,7 @@ export default function Profile() {
       className=" w-full h-full flex items-center justify-center
      "
     >
-      <form className=" bg-gray-200 w-96 p-4 rounded-2xl">
+      <form className=" bg-gray-200 md:w-96 w-80 p-4 rounded-2xl">
         <header>
           <h1 className="font-bold text-2xl">Information</h1>
         </header>

@@ -12,91 +12,90 @@ import { FiUsers } from "react-icons/fi";
 import { IoPersonAddOutline } from "react-icons/io5";
 import MenuItm from "../MenuItem";
 
-type PropTypes = { className: string };
+type PropTypes = { className?: string };
 
 const Menu: FC<PropTypes> = ({ className }) => {
   return (
     <div className={`${className} flex flex-col gap-7 pl-3 pt-10`}>
       <MenuItm
-      className={"text-2xl  mb-10"}
-      label={"Fitilo"}
+        className={"md:block hidden text-2xl  mb-10"}
+        label={"Fitilo"}
         to={"dashboard"}
         icon={
           <SiFitbit
             className="min-w-[40px] min-h-[40px]"
             color="white"
-            size={30}
+            
           />
         }
       />
       <MenuItm
-      label={"Dashboard"}
+        label={"Dashboard"}
         to={"/dashboard"}
         icon={
           <RxDashboard
             className="min-w-[40px] min-h-[40px]"
             color="white"
-            size={30}
+            
           />
         }
       />
       <MenuItm
-      label={"Profile"}
+        label={"Profile"}
         to={"/Profile"}
         icon={
           <MdOutlineManageAccounts
             className="min-w-[40px] min-h-[40px]"
             color="white"
-            size={30}
+            
           />
         }
       />
-      
+
       <MenuItm
-      label={"AddNewUser"}
+        label={"AddNewUser"}
         to={"/NewUser"}
         icon={
           <IoPersonAddOutline
             className="min-w-[40px] min-h-[40px]"
             color="white"
-            size={30}
+            
           />
         }
       />
       <MenuItm
-      label={"Users"}
+        label={"Users"}
         to={"/Users"}
         icon={
           <FiUsers
             className="min-w-[40px] min-h-[40px]"
             color="white"
-            size={30}
+            
           />
         }
       />
       <MenuItm
-      label={"Services"}
+        label={"Services"}
         to={"/Services"}
         icon={
           <MdProductionQuantityLimits
             className="min-w-[40px] min-h-[40px]"
             color="white"
-            size={30}
+            
           />
         }
       />
       <MenuItm
-      label={"Setting"}
+        label={"Setting"}
         to={"/Services"}
         icon={
           <IoSettingsOutline
             className="min-w-[40px] min-h-[40px]"
             color="white"
-            size={30}
+            
           />
         }
       />
-     
     </div>
   );
 };
