@@ -12,6 +12,53 @@ import { FiUsers } from "react-icons/fi";
 import { IoPersonAddOutline } from "react-icons/io5";
 import MenuItm from "../MenuItem";
 
+const menuItems = [
+  {
+    label: "Dashboard",
+    to: "/dashboard",
+    icon: <RxDashboard className="min-w-[40px] min-h-[40px]" color="white" />,
+  },
+  {
+    label: "Profile",
+    to: "/Profile",
+    icon: (
+      <MdOutlineManageAccounts
+        className="min-w-[40px] min-h-[40px]"
+        color="white"
+      />
+    ),
+  },
+  {
+    label: "AddNewUser",
+    to: "/NewUser",
+    icon: (
+      <IoPersonAddOutline className="min-w-[40px] min-h-[40px]" color="white" />
+    ),
+  },
+  {
+    label: "Users",
+    to: "/Users",
+    icon: <FiUsers className="min-w-[40px] min-h-[40px]" color="white" />,
+  },
+  {
+    label: "Services",
+    to: "/Services",
+    icon: (
+      <MdProductionQuantityLimits
+        className="min-w-[40px] min-h-[40px]"
+        color="white"
+      />
+    ),
+  },
+  {
+    label: "Setting",
+    to: "/Services",
+    icon: (
+      <IoSettingsOutline className="min-w-[40px] min-h-[40px]" color="white" />
+    ),
+  },
+];
+
 type PropTypes = { className?: string };
 
 const Menu: FC<PropTypes> = ({ className }) => {
@@ -21,81 +68,11 @@ const Menu: FC<PropTypes> = ({ className }) => {
         className={"md:block hidden text-2xl  mb-10"}
         label={"Fitilo"}
         to={"dashboard"}
-        icon={
-          <SiFitbit
-            className="min-w-[40px] min-h-[40px]"
-            color="white"
-            
-          />
-        }
+        icon={<SiFitbit className="min-w-[40px] min-h-[40px]" color="white" />}
       />
-      <MenuItm
-        label={"Dashboard"}
-        to={"/dashboard"}
-        icon={
-          <RxDashboard
-            className="min-w-[40px] min-h-[40px]"
-            color="white"
-            
-          />
-        }
-      />
-      <MenuItm
-        label={"Profile"}
-        to={"/Profile"}
-        icon={
-          <MdOutlineManageAccounts
-            className="min-w-[40px] min-h-[40px]"
-            color="white"
-            
-          />
-        }
-      />
-
-      <MenuItm
-        label={"AddNewUser"}
-        to={"/NewUser"}
-        icon={
-          <IoPersonAddOutline
-            className="min-w-[40px] min-h-[40px]"
-            color="white"
-            
-          />
-        }
-      />
-      <MenuItm
-        label={"Users"}
-        to={"/Users"}
-        icon={
-          <FiUsers
-            className="min-w-[40px] min-h-[40px]"
-            color="white"
-            
-          />
-        }
-      />
-      <MenuItm
-        label={"Services"}
-        to={"/Services"}
-        icon={
-          <MdProductionQuantityLimits
-            className="min-w-[40px] min-h-[40px]"
-            color="white"
-            
-          />
-        }
-      />
-      <MenuItm
-        label={"Setting"}
-        to={"/Services"}
-        icon={
-          <IoSettingsOutline
-            className="min-w-[40px] min-h-[40px]"
-            color="white"
-            
-          />
-        }
-      />
+      {menuItems.map((item, index) => (
+        <MenuItm key={index} label={item.label} icon={item.icon} to={item.to} />
+      ))}
     </div>
   );
 };

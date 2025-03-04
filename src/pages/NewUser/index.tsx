@@ -61,7 +61,8 @@ export default function NewUser() {
 
   const handelSubmit=async(e: React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault();
-   await CreateUser()
+   await
+    CreateUser()
    
     
   }
@@ -81,7 +82,10 @@ export default function NewUser() {
       <br />
       <TextField label="Last Name" type="text" onChange={handleLastName} value={newjob} plac="olovi" />
       <br />
-      <Select onChange={handleavailability}/>
+      <Select options={[
+        {value:"Available", label:"Available"},
+        {value:"Unavailable", label:"Unavailable"}
+      ]} onChange={handleavailability}/>
       <br />
       <Button
         
