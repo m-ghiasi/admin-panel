@@ -12,6 +12,7 @@ type memberType = {
 export default function Cards() {
   const [loading, setLoading] = useState(false);
   const [members, setMembers] = useState<memberType[]>([]);
+  
 
   const getData = async () => {
     setLoading(true);

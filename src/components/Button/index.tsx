@@ -8,16 +8,19 @@ type BuType = {
   type?:string
 };
 
-export default function Button(props: BuType) {
+
+export default function Button(props:BuType) {
+  const {label,className,onClick,onMouseEnter,onMouseLeave,children }= props;
   return (
     <button
-      onClick={props.onClick}
-      className={`cursor-pointer ${props.className}`}
-      onMouseEnter={props.onMouseEnter}
-      onMouseLeave={props.onMouseLeave}
+      onClick={onClick}
+      className={`cursor-pointer ${className}`}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      
     >
-      {props.children}
-      {props.label}
+      {children}
+      {label}
     </button>
   );
 }

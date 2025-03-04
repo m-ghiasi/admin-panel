@@ -59,9 +59,10 @@ export default function NewUser() {
     }
   };
 
-  const handelSubmit=(e: React.FormEvent<HTMLFormElement>)=>{
-    CreateUser()
+  const handelSubmit=async(e: React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault();
+   await CreateUser()
+   
     
   }
 
