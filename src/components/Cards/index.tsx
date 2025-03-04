@@ -32,13 +32,13 @@ export default function Cards() {
   }, []);
 
   return (
-    <div className=" flex-1">
+    <div className="w-[100%] flex-1 overflow-x-hidden ">
       {loading ? (
         <div className="w-full h-screen flex justify-center items-center">
           <TailSpin width={50} height={50} color="purple" />
         </div>
       ) : (
-        <div className="grid grid-cols-2 gap-3 ">
+        <div className="grid md:grid-cols-2 gap-3 ">
           {members.map((member: memberType, index: number) => (
             <div
               className=" bg-gray-200 rounded-2xl flex items-center gap-3 p-3"

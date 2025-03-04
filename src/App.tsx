@@ -17,7 +17,7 @@ function App() {
   const hideAside:boolean = location.pathname ==="/";
   return (
     
-      <div className="flex h-screen flex-col md:flex-row">
+      <div className="overflow-x-hidden flex h-screen flex-col md:flex-row">
         {!hideAside && <Aside />}
         <Routes>
           {/* login page */}

@@ -28,19 +28,7 @@ export default function GetMyUsers() {
       setLoading(false)
     }
   };
-  // const handleDelete = async (id: number) => {
-  //   try {
-  //     const res = await fetch(`http://localhost:5000/users/${id}`, {
-  //       method: "DELETE",
-  //     });
-  //     if (!res.ok) {
-  //       throw new Error("Failed to delete user");
-  //     }
-  //     setUsers((prevUsers) => prevUsers.filter((user) => user.id !== id));
-  //   } catch (error) {
-  //     console.error("Delete failled ", error);
-  //   }
-  // };
+ 
 
 
   const handleDelete=async(id:number)=> {
@@ -82,7 +70,7 @@ export default function GetMyUsers() {
   }, []);
 
   return (
-    <div className="w-[100%]">
+    <div className="  w-[100%]">
       {loading ? (<div className="flex justify-center mt-10">
         <TailSpin width={50} height={50} color="purple" />
       </div>) :(

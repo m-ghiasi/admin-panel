@@ -32,7 +32,7 @@ export default function Users() {
     setLoading(false)
   };
   return (
-    <div className="ml-[5%] w-full h-screen flex flex-col p-4">
+    <div className="md:ml-[5%] w-full h-screen flex flex-col p-4">
       <div className="flex gap-4 ">
         <Button
           className={`text-purple-700 font-bold h-20 p-4 rounded-t-2xl mb-3 ${
@@ -53,7 +53,7 @@ export default function Users() {
           onClick={ReqresUsers}
         />
       </div>
-      <div className="flex justify-center mt-10">
+      <div className="flex  justify-center mt-10">
         {selectedTab === "MyUser" ? (
           <GetMyUsers />
         ) : selectedTab === "reqres" ? (
