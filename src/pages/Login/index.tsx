@@ -2,7 +2,9 @@ import { NavLink, useNavigate } from "react-router";
 import { SiFitbit } from "react-icons/si";
 import TextField from "../../components/TextField";
 import Button from "../../components/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function Login() {
 
 
@@ -21,12 +23,27 @@ export default function Login() {
             console.log("error----toast")
         }
     }
+    const showToast = () => {
+      toast("User: avin && pass: avin", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+    };
+
+    useEffect(()=>{
+      toast.info("User: avin && pass: avin", {
+        position: "top-right",
+        autoClose: 3000,
+       
+      });
+    },[])
 
 
 
 
   return (
     <div className="flex justify-center items-center h-screen w-screen ">
+      <ToastContainer />
       <div className="p-2 w-[50%] h-[70%] md:border md:border-gray-300 rounded-2xl flex flex-col items-center justify-center gap-2">
         <SiFitbit size={50} color="purple" />
         <h1 className="font-bold mt-3">Login To User Panel</h1>
