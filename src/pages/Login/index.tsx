@@ -23,12 +23,7 @@ export default function Login() {
             console.log("error----toast")
         }
     }
-    const showToast = () => {
-      toast("User: avin && pass: avin", {
-        position: "top-right",
-        autoClose: 3000,
-      });
-    };
+    
 
     useEffect(()=>{
       toast.info("User: avin && pass: avin", {
